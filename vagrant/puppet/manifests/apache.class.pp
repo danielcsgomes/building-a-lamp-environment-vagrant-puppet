@@ -5,7 +5,7 @@ class apache {
     }
 
     package { "libapache2-mod-php5":
-        ensure => latest,
+        ensure => present,
         require => Package["apache2-mpm-prefork"],
         notify => Service["apache2"],
     }

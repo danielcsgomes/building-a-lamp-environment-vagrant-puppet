@@ -9,7 +9,7 @@ class php {
 
     $phppackages = [ "php5-cli", "php5-dev", "php5-xdebug", "php5-intl", "php5-sqlite", "php-pear" ]
     package { $phppackages:
-        ensure => latest,
+        ensure => present,
         require => [
         Exec["ondrej-php54-repository"],
         Package["libapache2-mod-php5"]
@@ -18,7 +18,7 @@ class php {
     }
 
     package { "php5-mysql":
-        ensure => latest,
+        ensure => present,
         require => [
         Exec["ondrej-php54-repository"],
         Package["mysql-client"]
